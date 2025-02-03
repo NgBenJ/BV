@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Responsive Header</title>
+</head>
+<body>
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="logo.png" alt="Evidencio Logo" class="h-8 mr-2">
+        <span class="text-xl font-bold text-indigo-600">Evidencio</span>
+      </div>
+      
+      <!-- Menu Items (Desktop) -->
+      <nav class="hidden md:flex space-x-6">
+        <a href="#" class="text-gray-700 hover:text-indigo-600">Models</a>
+        <a href="#" class="text-gray-700 hover:text-indigo-600">Validations</a>
+        <a href="#" class="text-gray-700 hover:text-indigo-600">About</a>
+        <a href="#" class="text-gray-700 hover:text-indigo-600">Pricing</a>
+      </nav>
+
+      <!-- Login Button -->
+      <button class="hidden md:inline-block bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-500">Login</button>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+      <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-indigo-100">Models</a>
+      <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-indigo-100">Validations</a>
+      <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-indigo-100">About</a>
+      <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-indigo-100">Pricing</a>
+      <button class="block w-full text-left px-4 py-2 bg-indigo-600 text-white hover:bg-indigo-500">Login</button>
+    </nav>
+  </header>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
